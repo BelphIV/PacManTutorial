@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
 
     void NewGame()
     {
+
         isGameOver = false;
         SetScore(0);
         SetLives(3);
