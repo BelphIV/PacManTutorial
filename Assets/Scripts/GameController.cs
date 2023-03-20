@@ -111,7 +111,10 @@ public class GameController : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
-        //TODO: change ghost state
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            this.ghosts[i].frightened.Enable(pellet.duration);
+        }
 
         PelletEaten(pellet);
         CancelInvoke();
