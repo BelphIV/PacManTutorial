@@ -37,6 +37,8 @@ public class Pacman : MonoBehaviour
     public void ResetState()
     {        
         this.gameObject.SetActive(true);
+        this.gameObject.transform.parent.transform.GetChild(1).gameObject.SetActive(false);
+        this.gameObject.transform.parent.transform.GetChild(2).gameObject.SetActive(false);
         this.movement.ResetState();
     }
 }

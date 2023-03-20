@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
 
     bool isGameOver;
 
+
     private void Start()
     {
         NewGame();
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
         isGameOver = true;
     }
 
-    void SetScore(int score)
+    public void SetScore(int score)
     {
         this.score = score;
     }
@@ -85,6 +86,8 @@ public class GameController : MonoBehaviour
     public void PacmanEaten()
     {
         this.pacman.gameObject.SetActive(false);
+        this.pacman.gameObject.transform.parent.transform.GetChild(1).gameObject.SetActive(true);
+        this.pacman.gameObject.transform.parent.transform.GetChild(1).transform.position = this.pacman.gameObject.transform.position;
 
         SetLives(this.lives - 1);
 
@@ -105,7 +108,10 @@ public class GameController : MonoBehaviour
         if (!HasPellet())
         {
             this.pacman.gameObject.SetActive(false);
+            this.pacman.gameObject.transform.parent.transform.GetChild(2).gameObject.SetActive(true);
+            this.pacman.gameObject.transform.parent.transform.GetChild(2).transform.position = this.pacman.gameObject.transform.position;
             Invoke(nameof(NewRound), 3.0f);
+
         }
     }
 
@@ -138,4 +144,6 @@ public class GameController : MonoBehaviour
     {
         this.ghostMultiplier = 1;
     }
+
+    
 }
