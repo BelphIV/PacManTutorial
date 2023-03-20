@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637362d80e301be459e7f6502eb4b3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghostName: Blinky
   points: 200
   initialBehavior: {fileID: 2017139770}
   target: {fileID: 0}

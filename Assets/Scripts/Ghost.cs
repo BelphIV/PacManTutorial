@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
+    public string ghostName;
     public int points = 200;
 
     public Movement movement { get; private set; }
@@ -13,7 +14,7 @@ public class Ghost : MonoBehaviour
     public GhostScatter scatter { get; private set; }
 
     public GhostBehavior initialBehavior;
-    public Transform target;
+    [HideInInspector] public Transform target;
     GameController gameController;
 
     private void Awake()

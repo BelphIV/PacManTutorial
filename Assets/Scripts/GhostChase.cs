@@ -31,4 +31,16 @@ public class GhostChase : GhostBehavior
         }
 
     }
+
+    private void Update()
+    {
+        if (this.ghost.ghostName == "Clyde")
+        {
+            float distance = (this.ghost.target.position - this.ghost.transform.position).sqrMagnitude;
+            if(distance <= 100)
+            {
+                this.Disable();
+            }
+        }
+    }
 }
