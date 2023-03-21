@@ -10,7 +10,7 @@ public class Fruit : MonoBehaviour
         if (collision.gameObject.CompareTag("Pacman"))
         {
             GameController gameController = FindObjectOfType<GameController>();
-            gameController.SetScore(score);
+            gameController.SetScore(gameController.score + this.score);
             Destroy(gameObject);
         }
     }

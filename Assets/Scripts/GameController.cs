@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class GameController : MonoBehaviour
 
     bool isGameOver;
 
+    [Space]
+    [SerializeField] Text scoreText;
+    [SerializeField] Text livesText;
+
 
     private void Start()
     {
@@ -22,6 +27,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         if(isGameOver && Input.anyKeyDown){NewGame();}
+        scoreText.text = score.ToString();
     }
 
     void NewGame()
@@ -74,6 +80,7 @@ public class GameController : MonoBehaviour
     void SetLives(int lives)
     {
         this.lives = lives;
+        livesText.text = "x" + lives ;
     }
 
     public void GhostEaten(Ghost ghost)
